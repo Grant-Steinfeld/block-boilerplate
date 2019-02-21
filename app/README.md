@@ -15,6 +15,10 @@ V. Adding a new REST endpoint
 
 Vl. Calling Hyperledger Fabric Network
 
+Vl. Smart Code - basics
+
+Vl. Smart Code - solving the tic-tac-toe game
+
 
 ### Step l. Introduction
 This a JavaScript/TypeScript application
@@ -449,8 +453,10 @@ add the blockchainClient.ts
 
 
 ```
-
-
+### Step Vl. Smart Code - basics
+tbd
+### Step Vl. Smart Code - solving the tic-tac-toe game
+tbd
 
 ## pre-requisites
 ensure you have VSCode installed first
