@@ -75,7 +75,7 @@ this will create a ping controller in src/controllers/ping.controlelr.ts
 ### Step lVa. 
 ```sh
 #clone the repo
-mkdir block-boilerplate
+git clone https://github.com/Grant-Steinfeld/block-boilerplate.git
 cd block-boilerplate
 echo "opening vs code in this directory"
 code .
@@ -225,7 +225,7 @@ response will be the { "game_uuid": <<seeded with intial empty board>>, "board i
 ### Adding a model
 To setup the request and response datastructures we need to add a model - a datastructure representing the game board, it's id, cells and state:
 
-Add a new file under src/models/ and call it tictactoe.model.ts
+Add a new file under app/src/models/ and call it tictactoe.model.ts
 Copy and past the following:
 
 ```TypeScript
@@ -326,8 +326,17 @@ export class TictactoeController {
 
 }
 
-
 ```
+npm run dev
+#or
+npm start
+```
+
+go to the api explorer
+http://127.0.0.1:3000
+
+test out the endpoints / ping and make mark
+
 
 ### Step Vl. Calling Hyperledger Fabric Network
 Now we have a basic NodeJS application that has a REST interface we can now
@@ -472,7 +481,7 @@ certificateAuthorities:
 
 
 ### add the blockchainClient.ts
-
+to the 
 
 ### Step Vl. Smart Code - basics
 add  the smart contract
