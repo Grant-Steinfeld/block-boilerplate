@@ -5,7 +5,7 @@
 ## Steps
 l. Introduction
 
-ll. Install NVM
+ll. Prerequisites
 
 lll. Create a Loopback NodeJS Application
 
@@ -25,12 +25,27 @@ This a JavaScript/TypeScript application
 created with Loopback v4, which provides
 a NodeJS boilerplate, and an OpenAPI  REST interface. 
 
-### Step ll. Install nvm
+### Step ll. 
+
+Install nvm
 [NVM](https://github.com/creationix/nvm#install-script) the, node version manager is a useful tool that lets you install and choose specific version of node
 
 ```sh
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
 ```
+
+## Requirements and pre-requisites
+
+We will use the 
+[IBM Blockchain Platform Extension for VSCode](https://marketplace.visualstudio.com/items?itemName=IBMBlockchain.ibm-blockchain-platform) to package our smart contract. 
+
+
+You will need the following installed in order to use the extension:
+- [VSCode version 1.31 or greater](https://code.visualstudio.com)
+- [Node v8.x or greater and npm v5.x or greater](https://nodejs.org/en/download/)
+- [Yeoman (yo) v2.x](http://yeoman.io/)
+- [Docker version v17.06.2-ce or greater](https://www.docker.com/get-docker)
+- [Docker Compose v1.14.0 or greater](https://docs.docker.com/compose/install/)
 
 
 ### Step lll.  Create a Loopback NodeJS Application
@@ -446,7 +461,7 @@ certificateAuthorities:
 ```
 
 
-add the blockchainClient.ts
+### add the blockchainClient.ts
 
 ```TypeScript
 
@@ -454,12 +469,11 @@ add the blockchainClient.ts
 
 ```
 ### Step Vl. Smart Code - basics
-tbd
-### Step Vl. Smart Code - solving the tic-tac-toe game
-tbd
+add  the smart contract to a new smart contract project, packcage, start fabric runtime, install and instantiate network
 
-## pre-requisites
-ensure you have VSCode installed first
+### Step Vl. Smart Code - solving the tic-tac-toe game
+exercise for the user
+
 
 ```sh
 mkdir block-boilerplate
