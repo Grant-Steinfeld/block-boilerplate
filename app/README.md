@@ -336,6 +336,7 @@ go to the api explorer
 http://127.0.0.1:3000
 
 test out the endpoints / ping and make mark
+note these will not hit the blockchain network yet, still a few steps to go!
 
 
 ### Step Vl. Calling Hyperledger Fabric Network
@@ -480,8 +481,7 @@ certificateAuthorities:
 ```
 
 
-### examine the smart contract. the blockchainClient.ts
-to the 
+
 
 ### Step Vl. Smart Code - basics
 add  the smart contract
@@ -491,9 +491,14 @@ first `create a new smart contract project`
 `install contract` 
 `instantiate network` by calling `init` function, no args
 
+### examine and copy the smart contract to start to play tic tac toe
+
+https://github.com/Grant-Steinfeld/block-boilerplate/blob/master/smartcontract/my-contract.js
+copy this code to the new smart contract project created above, replace the lib/my-contract.js with this code
+-which determines how data is put on to the blockchain.
 
 ### Step Vl. Extending Smart Code - solving the tic-tac-toe game
-exercise for the user to determine winner and change state of board.
+exercise for the user to determine winner and change state of board to tie/win
 
 
 
