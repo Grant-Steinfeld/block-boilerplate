@@ -1,6 +1,6 @@
-# boilerplate nodeJS application
+# boilerplate nodeJS loopback hyperledger fabric client application and basic network ( draft 1 )
 
-    So this is the boilerplate for a Loopback  nodeJS application
+    So this is the boilerplate for a Loopback  nodeJS application that talks to a Hyperledger Fabric basic network created in visual studio code with IBM Blockchaing Platform Extension.
 
 ## Steps
 l. Introduction
