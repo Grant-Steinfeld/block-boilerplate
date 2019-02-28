@@ -11,6 +11,8 @@ lll. Create a Loopback NodeJS Application
 
 lV. Install nodeJS productivity tools
 
+lVa. Clone the repo
+
 V. Adding a new REST endpoint
 
 Vl. Calling Hyperledger Fabric Network
@@ -70,6 +72,14 @@ This will create the nodeJS application in the app/ directory with all the neces
 
 this will create a ping controller in src/controllers/ping.controlelr.ts
 
+### Step lVa. 
+```sh
+#clone the repo
+mkdir block-boilerplate
+cd block-boilerplate
+echo "opening vs code in this directory"
+code .
+```
 
 ### Step lV. 
 To aid development, these node packages will auto watch files on save and autocompile the typescript ( so you will not need to restart npm each time )
@@ -463,21 +473,18 @@ certificateAuthorities:
 
 ### add the blockchainClient.ts
 
-```TypeScript
 
-
-
-```
 ### Step Vl. Smart Code - basics
-add  the smart contract to a new smart contract project, packcage, start fabric runtime, install and instantiate network
+add  the smart contract
+first `create a new smart contract project`
+`packcage it`
+`start fabric runtime` 
+`install contract` 
+`instantiate network` by calling `init` function, no args
 
-### Step Vl. Smart Code - solving the tic-tac-toe game
-exercise for the user
+
+### Step Vl. Extending Smart Code - solving the tic-tac-toe game
+exercise for the user to determine winner and change state of board.
 
 
-```sh
-mkdir block-boilerplate
-cd block-boilerplate
-echo "opening vs code in this directory"
-code .
-```
+
