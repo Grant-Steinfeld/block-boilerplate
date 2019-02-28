@@ -480,7 +480,7 @@ certificateAuthorities:
 ```
 
 
-### add the blockchainClient.ts
+### examine the smart contract. the blockchainClient.ts
 to the 
 
 ### Step Vl. Smart Code - basics
