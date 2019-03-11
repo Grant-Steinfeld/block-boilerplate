@@ -1,4 +1,4 @@
 # block-boilerplate
-basic blockchain loopback boilerplate 
+basic blockchain loopback application boilerplate ( e.g. simple tic.tac.toe game )
 
-see other readme in ./app
+please refer [the Readme](./app/README.md)
