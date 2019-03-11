@@ -1,6 +1,6 @@
-# boilerplate nodeJS loopback hyperledger fabric client application and basic network ( draft 1 )
+# boilerplate nodeJS loopback hyperledger fabric client application and basic network ( draft 1 - needs updating!!!)
 
-    So this is the boilerplate for a Loopback  nodeJS application that talks to a Hyperledger Fabric basic network created in visual studio code with IBM Blockchaing Platform Extension.
+  So this is the boilerplate for a Loopback  nodeJS application that talks to a Hyperledger Fabric basic network created in visual studio code with IBM Blockchaing Platform Extension.
 
 ## Steps
 l. Introduction
@@ -265,66 +265,12 @@ Lets implement a controller to create a new board, via
 a GET endpoint and a PUT to allow players to make their Naughts and Crosses on that board.
 
 ### Adding a Controller
-Add a new file under src/controllers/ and call it tictactoe.controller.ts
-Copy and past the following:
+Normally you will add a file like we have in the repo:
 
-```TypeScript
-import { Request, RestBindings, operation, requestBody } from '@loopback/rest';
-import { inject } from '@loopback/context';
+https://github.com/Grant-Steinfeld/block-boilerplate/blob/master/app/src/controllers/tictactoe.controller.ts
 
-import { TicTacToeBoard } from '../models/tic-tac-toe-board.model';
+notice the call to the blockchainClient.ts - this is how to connect to the local-fabric network - which you will shortly start, but for now:
 
-const uuidv1 = require('uuid/v1');
-
-
-export class TictactoeController {
-  constructor(@inject(RestBindings.Http.REQUEST) private req: Request) { }
-
-
-  /**
-   *
-   * Creates empty tictactoe board
-   * @returns TicTacToeBoard
-   */
-  @operation('get', '/Tictactoe', {
-    responses: {
-      '200': {
-        description: 'Tictactoe model instance',
-        content: { 'application/json': { schema: { 'x-ts-type': TicTacToeBoard } } },
-      },
-    },
-  })
-  tictactoeCreate(): TicTacToeBoard {
-
-      let cells = ['_','_','_','_','_','_','_','_'];
-      return new TicTacToeBoard({boardUUID: this.getUUID(), 
-        cells: cells, state:'initialized', winner:""})
-  }
-
-
-    /**
-    * Update board by id ( UUID )
-    * @param requestBody TicTacToeBoard Model instance data
-    * @returns TicTacToeBoard
-    */
-  @operation('put', '/Tictactoe', {
-    responses: {
-      '200': {
-        description: 'TicTacToeBoard model instance',
-        content: { 'application/json': { schema: { 'x-ts-type': TicTacToeBoard } } },
-      },
-    },
-  })
-  async tictactoeUpdate(@requestBody() requestBody: TicTacToeBoard): Promise<TicTacToeBoard> {
-    console.log(requestBody);
-    return requestBody;
-  } 
-
-  getUUID():string{
-    return uuidv1()
-  }
-
-}
 
 ```
 npm run dev
@@ -335,8 +281,10 @@ npm start
 go to the api explorer
 http://127.0.0.1:3000
 
-test out the endpoints / ping and make mark
+test out the endpoints /makemark
 note these will not hit the blockchain network yet, still a few steps to go!
+and you will get errors :)
+
 
 
 ### Step Vl. Calling Hyperledger Fabric Network
@@ -345,7 +293,7 @@ start to get it connected to a basic Hyperledger Fabric peer's Smart Chain Code.
 
 Firstly we assume you have a basic network up and running ( see here for local setup using VSCode Extenstions if need be ... <<< to be added >>>)
 
-export connection from network <<< tba >>>
+export connection from network ( will add wallet to your app folder )
 add network.yaml
 
 ```yaml
@@ -484,18 +432,34 @@ certificateAuthorities:
 
 
 ### Step Vl. Smart Code - basics
-add  the smart contract
-first `create a new smart contract project`
-`packcage it`
-`start fabric runtime` 
-`install contract` 
-`instantiate network` by calling `init` function, no args
-
 ### examine and copy the smart contract to start to play tic tac toe
 
 https://github.com/Grant-Steinfeld/block-boilerplate/blob/master/smartcontract/my-contract.js
-copy this code to the new smart contract project created above, replace the lib/my-contract.js with this code
--which determines how data is put on to the blockchain.
+
+
+add  the smart contract
+first `create a new smart contract project` 
+
+`package it`
+
+`start fabric runtime` 
+
+`install contract` 
+
+`instantiate network` by calling `init` function, no args
+
+
+```
+npm run dev
+#or
+npm start
+```
+now go again
+go to the api explorer
+http://127.0.0.1:3000
+
+and start adding the board to the blockchain ... 
+
 
 ### Step Vl. Extending Smart Code - solving the tic-tac-toe game
 exercise for the user to determine winner and change state of board to tie/win
